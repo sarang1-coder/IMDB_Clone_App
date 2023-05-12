@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            IMDB_Clone_App
+        </title>
+        <script src="https://kit.fontawesome.com/8e5bc71f76.js"
+            crossorigin="anonymous"></script>
+        <link rel="icon" href="./assets/imdb.png" sizes="16x16"
+            type="image/png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+
+        <div id="container">
+
+            <!-- Title  -->
+
+            <div id="navbar">
+                <div id="logo">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"/>
+                </div>
+                <div id="user-info">
+                    <div>
+                        <a href="Favourite/fav.html">Favourite&nbsp;List</a>
+                    </div>
+                    <div>
+                        <a href="">SignIn</a>
+                    </div>
+                    <div>
+                        <a href="">SignOut</a>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa-solid fa-gear fa-shake"></i></a>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa-solid fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Body  -->
+
+            <div id="main">
+
+                <!-- SearchBox  -->
+
+                <div id="searchBar">
+                    <div id="input-txt">
+
+                        <input id="movie-searchbox" class="control"
+                            placeholder="Search Movie" onkeyup="findMovies()"
+                            onclick="findMovies()"/>
+
+                        <div class="search-list" id="search-list">
+
+                            <!-- search-Items -->
+
+                            <!-- <div id="item" class="item">
+                                <div id="movie-pic">
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81hpcJ-hoIL._SX466_.jpg"/>
+                                </div>
+                                <div id="info">
+                                    <h3 >DDLJ</h3>
+                                    <p >2000</p>
+                                </div>
+                            </div> -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,250 @@
+:root {
+  --back-color: black;
+  --scroll-color: rgb(30, 23, 23);
+  --txt-color: rgb(210, 220, 32);
+}
+
+body {
+  background-color: var(--back-color);
+  margin: 10px;
+}
+
+h3,
+p,
+span {
+  color: wheat;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--back-color);
+  height: 90px;
+  z-index: 5;
+  top: 0px;
+  position: fixed;
+}
+
+#logo img {
+  width: 20%;
+}
+
+#logo img,
+#user-info div {
+  margin-top: 20px;
+}
+
+#user-info {
+  display: flex;
+  flex-direction: row;
+  padding-right: 18%;
+}
+
+#user-info div {
+  padding-left: 15%;
+  font-size: 20px;
+}
+
+a {
+  color: bisque;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+#main {
+  z-index: 1;
+}
+#searchBar {
+  position: relative;
+  width: 80%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+#input-txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin: 10% auto;
+  border-radius: 10px;
+  background-color: rgb(208, 208, 208);
+}
+
+#input-txt input {
+  height: 1px;
+  width: 90%;
+  padding: 2%;
+  margin: 5%;
+  height: 5px;
+  font-size: 1.8rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+/* List  */
+#search-list {
+  position: absolute;
+  overflow-y: scroll;
+  background-color: black;
+  top: 90px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  left: 310px;
+  width: 49%;
+  margin: 0 auto;
+  max-height: 450px;
+}
+
+.hide-search-list {
+  display: none;
+}
+
+/* Hide scrollbar  */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  margin: 0 auto;
+  border: 1px solid wheat;
+  transition: all 0.5s ease-in-out;
+}
+.item:hover {
+  transform: scale(0.9);
+  background-color: rgb(59, 54, 54);
+}
+
+#movie-pic {
+  width: 30%;
+  margin: auto 0;
+}
+#movie-pic img {
+  width: 30%;
+}
+#info {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Movies info  */
+#movie-container {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgb(49, 49, 49);
+}
+
+#result {
+  display: flex;
+  flex-direction: row;
+}
+
+#movie-img {
+  margin: auto 5%;
+  width: 30%;
+}
+#movie-info {
+  width: 70%;
+  margin: auto 5%;
+}
+#movie-img img {
+  padding: 5%;
+  width: 85%;
+  border: 5px solid white;
+}
+
+#movie-misc-info {
+  width: 100%;
+  display: flex;
+  margin-right: 80%;
+}
+
+#rated {
+  background-color: royalblue;
+  border-radius: 5px;
+}
+#genre {
+  width: 70%;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+#movie-title,
+#language,
+#awards {
+  color: var(--txt-color);
+}
+
+#favbtn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#favbtn button {
+  color: rgb(65, 69, 71);
+  background-color: rgb(121, 195, 190);
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Fav List  */
+
+#favourite-result {
+  opacity: 0;
+  margin: auto;
+  width: fit-content;
+  transition: 0.1s linear opacity;
+}
+
+.fav-list {
+  display: grid;
+  margin: 0px auto;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.fav-res-img:hover {
+  background-size: 100.9%;
+}
+
+.fav-res-img {
+  width: 350px;
+  height: 525px;
+  background-size: 105%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.2s linear background-size;
+}
+
+.remove-fav {
+  opacity: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  transition: o.2s ease opacity, o.2s ease background-color, o.2s ease color;
+}
+
+.remove-fav:hover {
+  opacity: 1;
+  background-color: black;
+  color: rgb(235, 84, 84);
+}
+
+.footer {
+  margin: auto;
+  margin-top: 300px;
+}
