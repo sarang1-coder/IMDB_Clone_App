@@ -23,14 +23,14 @@ const AddMovies = (details) =>{
     child.setAttribute('class','result');
     child.innerHTML=`<div id="movie-img">
                             <img
-                                src="https://www.washingtonpost.com/graphics/2019/entertainment/oscar-nominees-movie-poster-design/img/black-panther-web.jpg"/>
+                                src="${(details.Poster !=='N/A') ? details.Poster:"assets/img_not_found.jpg"}" alt="movie-poster"/>
                         </div>
 
 
 
                         <div id="movie-info">
 
-                            <h1 id="movie-title">Title</h1>
+                            <h1 id="movie-title"> ${details.Title}</h1>
 
                             <div id="movie-misc-info">
                                 <span id="year">Year:&ensp;2017</span>&emsp;
