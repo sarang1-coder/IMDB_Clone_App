@@ -42,16 +42,16 @@ const displayMovieDetails = (details) =>{
 
                             </div>`;
     
-    const div=document.createElement('div');
-    div.setAttribute('id',favbtn);
-    const fav=document.createElement('button');
-    fav.setAttribute('id',fav);
-    fav.innerHTML="Add to Fav";
-    fav.style.display="flex";
-    fav.style.flexDirection="row-reverse"
-    fav.style.backgroundColor="blue";
-    div.appendChild(fav);
-    result.appendChild(div);
+    // const div=document.createElement('div');
+    // div.setAttribute('id',favbtn);
+    // const fav=document.createElement('button');
+    // fav.setAttribute('id',fav);
+    // fav.innerHTML="Add to Fav";
+    // fav.style.display="flex";
+    // fav.style.flexDirection="row-reverse"
+    // fav.style.backgroundColor="blue";
+    // div.appendChild(fav);
+    // result.appendChild(div);
 
 
 
@@ -64,23 +64,18 @@ async function getData(movieID) {
     displayMovieDetails(movieDetails); 
 }
 
-if(movieID){
-if(favMovies.includes(movieID)){
-    addToFavBtn.textContent = 'Already Added To Favourites';
-}
-}
+// if(movieID){
+// if(favMovies.includes(movieID)){
+//     addToFavBtn.textContent = 'Already Added To Favourites';
+// }
+// }
 
 const addToFav = () =>{
     
-    addToFavBtn.textContent = 'Added To Favourites';
-    console.log(addToFavBtn);
-    
-    if(favMovies.includes(movieID)){
-        addToFavBtn.textContent = 'Already Added To Favourites';
-    }else{
+
         favMovies.push(movieID); 
         localStorage.setItem('favMovies',JSON.stringify(favMovies)); //set data to localstorage
-    }
+    
     
 }
 

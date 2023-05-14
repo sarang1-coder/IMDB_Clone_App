@@ -71,12 +71,12 @@ function loadMoviesDetails(){
         movie.addEventListener('click',async () => {
             searchList.classList.add('hide-search-list');
             searchBox.value="";
-            // const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=1bed2347`);
-            // const movieDetails = await result.json();
+            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=1bed2347`);
+            const movieDetails = await result.json();
             // displayMovieDetails(movieDetails);
-            localStorage.setItem('movieID',movie.dataset.id);
-            let dir = window.location.origin + "/IMDB_Clone/Result/res.html"; // Custom URL for result page
-            window.location.href = "./Result/res.html"; //Redirect to a new page(add github location)
+            localStorage.setItem('movieID',movieDetails);
+            let dir = window.location.origin + "/IMDB_Clone_APP/Result/res.html"; 
+            window.location.href = "./Result/res.html"; 
 
         });
     });
