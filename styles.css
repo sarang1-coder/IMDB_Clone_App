@@ -15,6 +15,8 @@ span {
   color: wheat;
 }
 
+
+/* Header  */
 #navbar {
   display: flex;
   flex-direction: row;
@@ -200,51 +202,41 @@ input:focus {
   transition: all 0.5s ease-in-out;
 }
 
-/* Fav List  */
-
-#favourite-result {
-  opacity: 0;
-  margin: auto;
-  width: fit-content;
-  transition: 0.1s linear opacity;
-}
-
-.fav-list {
-  display: grid;
-  margin: 0px auto;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.fav-res-img:hover {
-  background-size: 100.9%;
-}
-
-.fav-res-img {
-  width: 350px;
-  height: 525px;
-  background-size: 105%;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: 0.2s linear background-size;
-}
-
-.remove-fav {
-  opacity: 0;
-  width: 100%;
+/* Favourite page  */
+.fav-result {
   display: flex;
-  justify-content: center;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  transition: o.2s ease opacity, o.2s ease background-color, o.2s ease color;
+  overflow-y: none;
+  width: 90%;
+  padding: 1%;
+  transition: all 0.5s ease-in-out;
 }
 
-.remove-fav:hover {
-  opacity: 1;
-  background-color: black;
-  color: rgb(235, 84, 84);
+.fav-result div {
+  padding: 5%;
 }
 
-.footer {
-  margin: auto;
-  margin-top: 300px;
+#fav-movie-img img {
+  margin-top: 0%;
+  border: 10px solid white;
+}
+
+#movie-title {
+  font-size: 30px;
+}
+
+#fav-movie-info {
+  width: 90%;
+}
+
+/* Delete Btn  */
+.delete-btn {
+  background-color: transparent;
+  color: red;
+  border: 0;
+  font-size: 20px;
+}
+
+.delAlert {
+  margin-top: 10px;
+  color: aliceblue;
 }

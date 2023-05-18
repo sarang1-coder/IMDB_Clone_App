@@ -1,20 +1,23 @@
-// Titles:  http://www.omdbapi.com/?s=tt3896198&apikey=1bed2347
-// details: http://www.omdbapi.com/?i=tt3896198&apikey=1bed2347
+// Titles:  http://www.omdbapi.com/?s=tt3896198&apikey=8c154485
+// details: http://www.omdbapi.com/?i=tt3896198&apikey=8c154485
 
 
-
+// get MovieId from localstorage 
 let movieID=localStorage.getItem('movieID');
 
 const addToFavBtn = document.querySelector('#fav');
 
+// get favMovies from localstorage 
 let favMovies=JSON.parse(localStorage.getItem('favMovies'));
 
 const result=document.querySelector('#result');
 
 
+
+// Display Movie Image and Details 
 const displayMovieDetails = (details) =>{
 
-    console.log(details);
+    // console.log(details);
     result.innerHTML=`<div id="movie-img">
                                 <img src="${(details.Poster !=='N/A') ? details.Poster:"assets/img_not_found.jpg"}" alt="movie-poster"/>
                             </div>
@@ -36,54 +39,47 @@ const displayMovieDetails = (details) =>{
                                 <p id="language"><b>Language:</b>
                                      ${details.Language}</p>
                                  <p id="awards"><b><i class="fas fa-award"></i></b>
-                                     ${details.Awards}
-                                    <div id="favbtn"><button id="fav" onclick=addToFav()>Add to Fav</button></div>
-                                     </p>
+                                     ${details.Awards}</p>
 
                             </div>`;
-    
-    // const div=document.createElement('div');
-    // div.setAttribute('id',favbtn);
-    // const fav=document.createElement('button');
-    // fav.setAttribute('id',fav);
-    // fav.innerHTML="Add to Fav";
-    // fav.style.display="flex";
-    // fav.style.flexDirection="row-reverse"
-    // fav.style.backgroundColor="blue";
-    // div.appendChild(fav);
-    // result.appendChild(div);
-
-
 
 
 }
 
+
+// Get Movie Data from API 
 async function getData(movieID) {
-    const result = await fetch(`http://www.omdbapi.com/?i=${movieID}&apikey=1bed2347`); //Base URL
+    const result = await fetch(`http://www.omdbapi.com/?i=${movieID}&apikey=8c154485`); //Base URL
     const movieDetails = await result.json(); 
     displayMovieDetails(movieDetails); 
 }
 
-// if(movieID){
-// if(favMovies.includes(movieID)){
-//     addToFavBtn.textContent = 'Already Added To Favourites';
-// }
-// }
 
+// Add to Favourite Functionality 
 const addToFav = () =>{
     
-
+    if(favMovies.includes(movieID)){
+        alert('Already Added to Favourite List');
+    }else{        
         favMovies.push(movieID); 
-        localStorage.setItem('favMovies',JSON.stringify(favMovies)); //set data to localstorage
-    
+        localStorage.setItem('favMovies',JSON.stringify(favMovies));
+        addToFavBtn.textContent="Added to List";
+        addToFavBtn.style.backgroundColor='red';
+        addToFavBtn.style.color='white';         
+    }
     
 }
 
-console.log(movieID);
+// console.log(favMovies);
+
 
 if(movieID){
     getData(movieID);
 }
 
 
+addToFavBtn.style.margin='10px';
+
+
+// Favourite Btn functionality 
 addToFavBtn.addEventListener('click',addToFav);

@@ -4,15 +4,20 @@ const result=document.querySelector("#item-class");
 
 let favMovies=JSON.parse(localStorage.getItem('favMovies'));
 
+console.log(favMovies);
+
+
+// Get Maovie data from API 
 async function getData(movieID) {
-    const result = await fetch(`http://www.omdbapi.com/?i=${movieID}&apikey=1bed2347`); //Get data from API
+    const result = await fetch(`http://www.omdbapi.com/?i=${movieID}&apikey=8c154485`); //Get data from API
     const movieDetails = await result.json(); //Make data readable
     AddMovies(movieDetails); //Add to DOM
 }
 
-//Get all Favourite movies
+
+// Get all Movies with ID 
 favMovies.forEach(id => {
-        getData(id); // Get Movie from API with ID
+        getData(id); 
 });
 
 
@@ -20,22 +25,22 @@ const AddMovies = (details) =>{
 
     const child=document.createElement('div');
     child.setAttribute('id',details.imdbID);
-    child.setAttribute('class','result');
-    child.innerHTML=`<div id="movie-img">
+    child.setAttribute('class','fav-result');
+    child.innerHTML=`<div id="fav-movie-img">
                             <img
                                 src="${(details.Poster !=='N/A') ? details.Poster:"assets/img_not_found.jpg"}" alt="movie-poster"/>
                         </div>
 
 
 
-                        <div id="movie-info">
+                        <div id="fav-movie-info">
 
                             <h1 id="movie-title"> ${details.Title}</h1>
 
                             <div id="movie-misc-info">
-                                <span id="year">Year:&ensp;2017</span>&emsp;
-                                <span id="rated">&nbsp;Ratings:&ensp;PG-13&nbsp;</span>&emsp;
-                                <span id="released">Released:&ensp;05&nbsp;May&nbsp;2017</span>
+                                <span id="year"><b>Year</b>:</br>${details.Year}</span>&emsp;
+                                <span id="rated">&nbsp;Ratings:&ensp;${details.Rated}</span>&emsp;
+                                <span id="released">Released:&ensp;${details.Released}</span>
                             </div>
 
                             <p id="genre"><b>Genre:</b> ${details.Genre}</p>
@@ -46,33 +51,43 @@ const AddMovies = (details) =>{
                                 ${details.Language}</p>
                             <p id="awards"><b><i class="fas fa-award"></i></b>
                                 ${details.Awards}</p>
-
+                            
 
                         </div>`
 
+    const deldiv=document.createElement('div');
     const delBtn=document.createElement('button');
     delBtn.setAttribute('class','delete-btn');
-    delBtn.innerHTML=`<i data-id="${details.imdbID}" class="fa-solid fa-trash fa-bounce"></i>`;
+    delBtn.innerHTML=`<i data-id="${details.imdbID}" class="fa-solid fa-trash fa-bounce">`;
     delBtn.addEventListener('click',deleteMovie);
-    child.appendChild(delBtn);
+    deldiv.appendChild(delBtn);
+    child.appendChild(deldiv);
     result.appendChild(child);
 
 }
 
 
-const deleteMovie =(e) =>{
 
-    const delMovie=e.target.dataset.id;
 
-    const movie=document.getElementById(`${delMovie}`);
+const deleteMovie = (e) => {
+  const delID = e.target.dataset.id;
+  const movieIndex = favMovies.indexOf(delID);
+  favMovies.splice(movieIndex,1);
+  localStorage.setItem('favMovies',JSON.stringify(favMovies));
+  window.location.reload();
+  alert('Movie Deleted Successfully');
+};
 
-    movie.remove();
 
-    favMovies=favMovies.filter(id => id!=delMovie);
 
-    localStorage.setItem('favMovies',JSON.stringify(favMovies));
 
-}
+
+
+
+
+
+
+
 
 
 
