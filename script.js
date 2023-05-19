@@ -26,7 +26,7 @@ async function loadMovies(search){
 }
 
 
-// If Movies Not Find remove SearchList 
+// If user clicks other than list remove SearchList 
 function findMovies(){
     let search=(searchBox.value).trim();
     if(search.length>0){

@@ -27,16 +27,16 @@ const displayMovieDetails = (details) =>{
                                 <h1 id="movie-title">${details.Title}</h1>
 
                                 <div id="movie-misc-info">
-                                    <span id="year">Year:&ensp;${details.Year}</span>&emsp;
-                                    <span id="rated">&nbsp;Ratings:&ensp;${details.Rated}</span>&emsp;
-                                    <span id="released">Released:&ensp;${details.Released}</span>
+                                    <span id="year">YEAR:&ensp;${details.Year}</span>&emsp;
+                                    <span id="rated">&nbsp;RATINGS:&ensp;${details.Rated}</span>&emsp;
+                                    <span id="released">RELEASED:&ensp;${details.Released}</span>
                                 </div>
 
-                                <p id="genre"><b>Genre:</b> ${details.Genre}</p>
-                                <p id="writer"><b>Writer:</b> ${details.Writer}</p>
-                                <p id="actors"><b>Actors: </b>${details.Actors}</p>
-                                <p id="plot"><b>Plot:</b> ${details.Plot}</p>
-                                <p id="language"><b>Language:</b>
+                                <p id="genre"><b>GENRE:</b> ${details.Genre}</p>
+                                <p id="writer"><b>WRITER:</b> ${details.Writer}</p>
+                                <p id="actors"><b>ACTORS: </b>${details.Actors}</p>
+                                <p id="plot"><b>PLOT:</b> ${details.Plot}</p>
+                                <p id="language"><b>LANGUAGE:</b>
                                      ${details.Language}</p>
                                  <p id="awards"><b><i class="fas fa-award"></i></b>
                                      ${details.Awards}</p>
@@ -49,7 +49,7 @@ const displayMovieDetails = (details) =>{
 
 // Get Movie Data from API 
 async function getData(movieID) {
-    const result = await fetch(`http://www.omdbapi.com/?i=${movieID}&apikey=8c154485`); //Base URL
+    const result = await fetch(`http://www.omdbapi.com/?i=${movieID}&apikey=8c154485`); 
     const movieDetails = await result.json(); 
     displayMovieDetails(movieDetails); 
 }
@@ -65,7 +65,8 @@ const addToFav = () =>{
         localStorage.setItem('favMovies',JSON.stringify(favMovies));
         addToFavBtn.textContent="Added to List";
         addToFavBtn.style.backgroundColor='red';
-        addToFavBtn.style.color='white';         
+        addToFavBtn.style.color='white';
+        alert('Movie Added to Favourite List');         
     }
     
 }

@@ -15,7 +15,6 @@ span {
   color: wheat;
 }
 
-
 /* Header  */
 #navbar {
   display: flex;
@@ -45,8 +44,12 @@ span {
 }
 
 #user-info div {
-  padding-left: 15%;
-  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#user-info div {
+  padding-left: 10%;
+  font-size: 10px;
 }
 
 a {
@@ -160,7 +163,7 @@ input:focus {
 }
 #movie-info {
   width: 70%;
-  margin: auto 5%;
+  margin: 5%;
 }
 #movie-img img {
   padding: 5%;
@@ -212,7 +215,7 @@ input:focus {
 }
 
 .fav-result div {
-  padding: 5%;
+  padding: 4%;
 }
 
 #fav-movie-img img {
@@ -221,7 +224,9 @@ input:focus {
 }
 
 #movie-title {
-  font-size: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 #fav-movie-info {
@@ -234,6 +239,7 @@ input:focus {
   color: red;
   border: 0;
   font-size: 20px;
+  margin-right: 40px;
 }
 
 .delAlert {

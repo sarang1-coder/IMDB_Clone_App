@@ -21,6 +21,7 @@ favMovies.forEach(id => {
 });
 
 
+// Display FavList 
 const AddMovies = (details) =>{
 
     const child=document.createElement('div');
@@ -38,16 +39,16 @@ const AddMovies = (details) =>{
                             <h1 id="movie-title"> ${details.Title}</h1>
 
                             <div id="movie-misc-info">
-                                <span id="year"><b>Year</b>:</br>${details.Year}</span>&emsp;
-                                <span id="rated">&nbsp;Ratings:&ensp;${details.Rated}</span>&emsp;
-                                <span id="released">Released:&ensp;${details.Released}</span>
+                                <span id="year"><b>YEAR</b>:</br>${details.Year}</span>&emsp;
+                                <span id="rated">&nbsp;RATINGS:&ensp;${details.Rated}</span>&emsp;
+                                <span id="released">RELEASED:&ensp;${details.Released}</span>
                             </div>
 
-                            <p id="genre"><b>Genre:</b> ${details.Genre}</p>
-                            <p id="writer"><b>Writer:</b> ${details.Writer}</p>
-                            <p id="actors"><b>Actors: </b>${details.Actors}</p>
-                            <p id="plot"><b>Plot:</b> ${details.Plot}</p>
-                            <p id="language"><b>Language:</b>
+                            <p id="genre"><b>GENRE:</b> ${details.Genre}</p>
+                            <p id="writer"><b>WRITER:</b> ${details.Writer}</p>
+                            <p id="actors"><b>ACTORS: </b>${details.Actors}</p>
+                            <p id="plot"><b>PLOT:</b> ${details.Plot}</p>
+                            <p id="language"><b>LANGUAGE:</b>
                                 ${details.Language}</p>
                             <p id="awards"><b><i class="fas fa-award"></i></b>
                                 ${details.Awards}</p>
@@ -55,6 +56,8 @@ const AddMovies = (details) =>{
 
                         </div>`
 
+
+    // Delete Btn 
     const deldiv=document.createElement('div');
     const delBtn=document.createElement('button');
     delBtn.setAttribute('class','delete-btn');
@@ -69,6 +72,7 @@ const AddMovies = (details) =>{
 
 
 
+// Delete Functionality
 const deleteMovie = (e) => {
   const delID = e.target.dataset.id;
   const movieIndex = favMovies.indexOf(delID);
